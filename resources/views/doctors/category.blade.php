@@ -37,6 +37,10 @@
 
         @endforeach
     </div>
+    </div>
+
+    <div class="mt-4 py-8 px-8">
+        {{$doctors->links()}}
 
     </div>
     
