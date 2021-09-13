@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name'];
     
      //relacion uno a muchos 
      public function appointment(){
