@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    //Relacion uno a muchos
+    
+    protected $fillable = ['name'];
     //relacion uno a muchos 
     public function doctor(){
         return $this->hasMany(Doctor::class);

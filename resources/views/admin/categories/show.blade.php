@@ -3,7 +3,7 @@
 @section('title', 'GoClinic')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Detalles de Especialidades</h1>
 @stop
 
 @section('content')
