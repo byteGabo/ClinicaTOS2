@@ -12,6 +12,6 @@ class Category extends Model
     protected $fillable = ['name'];
     //relacion uno a muchos 
     public function doctor(){
-        return $this->hasMany(Doctor::class);
+        return $this->hasMany(Doctor::class,'category_id');
     }
 }

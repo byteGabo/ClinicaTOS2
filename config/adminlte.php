@@ -254,6 +254,12 @@ return [
         ],
         ['header' => 'Administrador'],
         [
+            'text' => 'Doctores',
+            'route'  => 'admin.doctors.index',
+            'icon' => 'fas fa-fw fa-user-md',
+            'active'=> ['admin/doctors*']
+        ], 
+        [
             'text' => 'Especialidades',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
@@ -265,11 +271,7 @@ return [
             'icon' => 'far fa-fw fa-bookmark',
             'active'=> ['admin/statuses*']
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+       
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -308,22 +310,20 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'OPCIONES'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Lista de citas',
+            'route'  => 'admin.appointments.index',
+            'icon' => 'fas fa-fw fa-calendar-check',
+            
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Crear nueva cita',
+            'route'  => 'admin.appointments.create',
+            'icon' => 'fas fa-fw fa-plus',
+            
         ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+    
     ],
 
     /*
@@ -478,5 +478,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
