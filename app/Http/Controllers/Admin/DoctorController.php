@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Category;
 
 class DoctorController extends Controller
 {
@@ -15,6 +16,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
+       
         return view('admin.doctors.index');
     }
 
@@ -25,7 +27,9 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.doctors.create');
+        $categories = Category::pluck('name','id');
+       
+        return view('admin.doctors.create',compact('categories'));
     }
 
     /**
@@ -36,7 +40,20 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required',
+            'gender'=> 'required',
+            'day_of_birth'=> 'required',
+            'email'=> 'required|unique:doctors',
+            'address'=> 'required',
+            'phone'=> 'required',
+            'is_active'=> 'required',
+            'category_id'=> 'required'
+        ]);
+
+        $doctor = Doctor::create($request->all());
+
+        return redirect()->route('admin.doctors.edit', $doctor);
     }
 
     /**
