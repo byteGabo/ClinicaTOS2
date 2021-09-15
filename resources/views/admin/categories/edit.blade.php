@@ -18,10 +18,10 @@
     <div class="card-body">
         {!! Form::model($category,['route' => ['admin.categories.update', $category], 'method' => 'put'])!!}
             <div class="form-group">
-                {!! Form::label('name', 'Nombre especialidad') !!}
-                {!! Form::text('name', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de la especialidad']) !!}
+                {!! Form::label('name_category', 'Nombre especialidad') !!}
+                {!! Form::text('name_category', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de la especialidad']) !!}
 
-                @error('name')
+                @error('name_category')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
 

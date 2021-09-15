@@ -14,6 +14,8 @@
                      <th>Email</th>
                      <th>Dirección</th>
                      <th>Telefono</th>
+                     <th>Estado</th>
+                     <th>Especialidad</th>
                      <th colspan="2"></th>
                  </tr>
             </thead>
@@ -26,6 +28,10 @@
                        <td>{{$doctor->email}}</td>
                        <td>{{$doctor->address}}</td>
                        <td>{{$doctor->phone}}</td>
+                       <td>{{$doctor->is_active}}</td>
+                       <td>{{$doctor->name_category}} </td>
+                   
+                    
                        <td width="10px">
                            <a class="btn btn-primary btn-sm" href="{{route('admin.doctors.edit', $doctor)}}">Editar</a>
                        </td>

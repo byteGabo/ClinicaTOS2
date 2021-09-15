@@ -16,7 +16,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-       
+
         return view('admin.doctors.index');
     }
 
@@ -27,7 +27,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $categories = Category::pluck('name','id');
+        $categories = Category::pluck('name_category','id');
        
         return view('admin.doctors.create',compact('categories'));
     }
@@ -75,7 +75,8 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        return view('admin.doctors.edit',compact('doctor'));
+        $categories = Category::pluck('name_category','id');
+        return view('admin.doctors.edit',compact('doctor','categories'));
     }
 
     /**
@@ -87,7 +88,23 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //
+        
+        
+        $request->validate([
+            'name'=> 'required',
+            'gender'=> 'required',
+            'day_of_birth'=> 'required',
+            'email'=> 'required',
+            'address'=> 'required',
+            'phone'=> 'required',
+            'is_active'=> 'required',
+            'category_id'=> 'required'
+        ]);
+
+       
+        $doctor -> update($request->all());
+
+        return redirect()->route('admin.doctors.edit', $doctor);
     }
 
     /**
@@ -98,6 +115,7 @@ class DoctorController extends Controller
      */
     public function destroy(Doctor $doctor)
     {
-        //
+        $doctor -> delete();
+        return redirect()->route('admin.doctors.index');
     }
 }

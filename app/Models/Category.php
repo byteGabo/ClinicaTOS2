@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['name'];
+    protected $fillable = ['name_category'];
     //relacion uno a muchos 
     public function doctor(){
         return $this->hasMany(Doctor::class,'category_id');

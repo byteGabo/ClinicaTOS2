@@ -7,7 +7,18 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <div class="card">
+        <div class="card-body">
+            {!! Form::model($doctor,['route' => ['admin.doctors.update', $doctor],'method' => 'put']) !!}
+
+            @include('admin.doctors.partials.form')
+            
+
+            {!! Form::submit('Actualizar Doctor', ['class'=>'btn btn-primary']) !!}
+
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
 
 @section('css')

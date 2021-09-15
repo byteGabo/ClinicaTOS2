@@ -11,7 +11,7 @@ class DoctorController extends Controller
     public function index(){
 
         
-        $doctors = Doctor::where('is_active', 2)->latest('id')->paginate(8);
+        $doctors = Doctor::where('is_active', 1)->latest('id')->paginate(8);
      
 
 
@@ -22,7 +22,7 @@ class DoctorController extends Controller
     public function category(Category $category){
         
         $doctors = Doctor::where('category_id', $category->id)
-                               ->where('is_active', 2)
+                               ->where('is_active', 1)
                                ->latest('id')
                                ->paginate(6);
         return view('doctors.category',compact('doctors', 'category'));
