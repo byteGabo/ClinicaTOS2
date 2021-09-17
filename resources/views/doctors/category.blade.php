@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="uppercase text-center text-3xl font-bold px-5 py-8">{{$category->name}}:</h1>
+    <h1 class="uppercase text-center text-3xl font-bold px-5 py-8">{{$category->name_category}}:</h1>
     <div class="flex items-center justify-center py-8 px-8">
     
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -12,7 +12,7 @@
             <div class="p-2">
                 <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{$doctor->name}}</h3>
                 <div class="text-center text-gray-400 text-xs font-semibold">
-                    <p>{{$category->name}}</p>
+                    <p>{{$category->name_category}}</p>
                 </div>
                 <table class="text-xs my-3">
                     <tbody><tr>

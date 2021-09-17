@@ -27,10 +27,10 @@ class CreateAppointmentsTable extends Migration
             $table->unsignedBigInteger('patient_id');
             $table->unsignedBigInteger('status_id');
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('doctor_id')->references('id')->on('doctors');
-            $table->foreign('patient_id')->references('id')->on('patients');
-            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
             
             $table->timestamps();
         });
