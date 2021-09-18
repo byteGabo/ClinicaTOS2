@@ -11,7 +11,8 @@ class DoctorController extends Controller
     public function index(){
 
         
-        $doctors = Doctor::where('is_active', 1)->latest('id')->paginate(8);
+        $doctors = Doctor::where('is_active', 1)
+                        ->latest('id')->paginate(8);
      
 
 

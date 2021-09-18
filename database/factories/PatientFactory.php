@@ -23,15 +23,15 @@ class PatientFactory extends Factory
     {
         return [
             'name_patient' => $this->faker->word(20),
-            'dpi' => $this->faker->word(15),
+            'dpi' => $this->faker->phoneNumber(10),
             'gender' => $this->faker->word(1),
             'day_of_birth' => $this->faker->date('Y-m-d','now'),
             'email' => $this->faker->email(20),
             'address' => $this->faker->address(20),
             'phone' => $this->faker->phoneNumber(20),
-            'sick' => $this->faker->sentence(50),
-            'medicaments' => $this->faker->sentence(50),
-            'alergy' => $this->faker->sentence(50),
+            'sick' => $this->faker->sentence(15),
+            'medicaments' => $this->faker->sentence(15),
+            'alergy' => $this->faker->sentence(15),
             'is_active' => $this->faker->randomElement([1,2]),
             
             //

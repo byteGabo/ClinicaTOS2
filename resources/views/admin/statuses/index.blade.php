@@ -16,7 +16,9 @@
     </div>
 
 @endif
+
     <div class="card">
+        @if ($statuses->count())
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -46,6 +48,11 @@
                 </tbody>
             </table>
         </div>
+        @else
+        <div class="card-body">
+            <strong>No hay ningún registro...</strong>
+        </div>
+        @endif
     </div>
 @stop
 

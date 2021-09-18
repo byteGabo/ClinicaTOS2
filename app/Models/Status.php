@@ -9,7 +9,7 @@ class Status extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name_status'];
     
      //relacion uno a muchos 
      public function appointment(){

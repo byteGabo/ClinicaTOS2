@@ -39,12 +39,12 @@ class StatusController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name_status' => 'required|unique:statuses'
+            'name_status' => 'required'
         ]);
 
         $status = Status::create($request->all());
        
-       return redirect()->route('admin.statuses.edit', $status)->with('info','El Status se creó con exito');
+       return redirect()->route('admin.statuses.index', $status)->with('info','El Status se creó con exito');
     }
 
     /**
@@ -84,7 +84,7 @@ class StatusController extends Controller
 
         $status->update($request->all());
 
-        return redirect()->route('admin.statuses.edit', $status)->with('info','El Status se actualizó con exito');
+        return redirect()->route('admin.statuses.index', $status)->with('info','El Status se actualizó con exito');
     }
 
     /**

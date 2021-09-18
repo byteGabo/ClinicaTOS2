@@ -25,7 +25,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.patients.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_patient'=> 'required',
+            'dpi'=> 'required',
+            'gender'=> 'required',
+            'day_of_birth'=> 'required',
+            'email'=> 'required|unique:doctors',
+            'address'=> 'required',
+            'phone'=> 'required',
+            'sick'=> 'required',
+            'medicaments'=> 'required',
+            'alergy'=> 'required',
+            'is_active'=> 'required',
+        ]);
+        $patient= Patient::create($request->all());
+
+        return redirect()->route('admin.patients.index',$patient);
     }
 
     /**
