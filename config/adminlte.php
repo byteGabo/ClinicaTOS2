@@ -254,6 +254,12 @@ return [
         ],
         ['header' => 'Administrador'],
         [
+            'text' => 'Pacientes',
+            'route'  => 'admin.patients.index',
+            'icon' => 'fas fa-fw fa-user-injured',
+            'active'=> ['admin/patients*']
+        ],
+        [
             'text' => 'Doctores',
             'route'  => 'admin.doctors.index',
             'icon' => 'fas fa-fw fa-user-md',

@@ -1,7 +1,7 @@
 <div class="form-group">
-    {!! Form::label('name', 'Nombre:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del doctor']) !!}
-    @error('name')
+    {!! Form::label('name_doctor', 'Nombre:') !!}
+    {!! Form::text('name_doctor', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del doctor']) !!}
+    @error('name_doctor')
             <span class="text-danger">{{$message}}</span>
         @enderror
 </div>

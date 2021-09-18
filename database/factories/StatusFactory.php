@@ -22,7 +22,7 @@ class StatusFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(5),
+            'name_status' => $this->faker->word(5),
             
         ];
     }

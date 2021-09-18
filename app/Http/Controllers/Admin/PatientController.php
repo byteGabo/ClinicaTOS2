@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Status;
 use Illuminate\Http\Request;
+use App\Models\Patient;
 
-
-class StatusController extends Controller
+class PatientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class StatusController extends Controller
      */
     public function index()
     {
-        $statuses = Status::all();
-        return view('admin.statuses.index',compact('statuses'));
+        return view('admin.patients.index');
     }
 
     /**
@@ -27,7 +25,7 @@ class StatusController extends Controller
      */
     public function create()
     {
-        return view('admin.statuses.create');
+        //
     }
 
     /**
@@ -38,13 +36,7 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name_status' => 'required|unique:statuses'
-        ]);
-
-        $status = Status::create($request->all());
-       
-       return redirect()->route('admin.statuses.edit', $status)->with('info','El Status se creó con exito');
+        //
     }
 
     /**
@@ -53,9 +45,9 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Status $status)
+    public function show($patient)
     {
-        return view('admin.statuses.show',compact('status'));
+        //
     }
 
     /**
@@ -64,9 +56,9 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Status $status)
+    public function edit($patient)
     {
-        return view('admin.statuses.edit',compact('status'));
+        //
     }
 
     /**
@@ -76,15 +68,9 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Status $status)
+    public function update(Request $request, $patient)
     {
-        $request->validate([
-            'name_status' => 'required|unique:statuses'
-        ]);
-
-        $status->update($request->all());
-
-        return redirect()->route('admin.statuses.edit', $status)->with('info','El Status se actualizó con exito');
+        //
     }
 
     /**
@@ -93,10 +79,8 @@ class StatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Status $status)
+    public function destroy($patient)
     {
-        $status->delete();
-
-        return redirect()->route('admin.statuses.index')->with('info','El Status se elimino con exito');
+        //
     }
 }

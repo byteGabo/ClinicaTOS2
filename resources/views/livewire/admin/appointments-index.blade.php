@@ -15,6 +15,10 @@
                     <th>Hora</th>
                     <th>Sintomas</th>
                     <th>Enfermedades</th>
+                    <th>Nombre Del Paciente</th>
+                    <th>Doctor</th>
+                    <th>Status</th>
+                    <th>Cita creada por</th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
@@ -25,8 +29,12 @@
                     <td>{{$appointment->title}}</td>
                     <td>{{$appointment->date_at}}</td>
                     <td>{{$appointment->time_at}}</td>
-                    <td>{{$appointment->syntoms}}</td>
+                    <td>{{$appointment->symtoms}}</td>
                     <td>{{$appointment->sick}}</td>
+                    <td>{{$appointment->name_patient}}</td>
+                    <td>{{$appointment->name_doctor}} </td>
+                    <td>{{$appointment->name_status}} </td>
+                    <td>{{$appointment->name}} </td>
                 </tr>
                     
                 @endforeach

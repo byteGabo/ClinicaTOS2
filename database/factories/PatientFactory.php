@@ -22,7 +22,7 @@ class PatientFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(20),
+            'name_patient' => $this->faker->word(20),
             'dpi' => $this->faker->word(15),
             'gender' => $this->faker->word(1),
             'day_of_birth' => $this->faker->date('Y-m-d','now'),

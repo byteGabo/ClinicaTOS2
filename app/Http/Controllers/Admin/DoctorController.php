@@ -41,7 +41,7 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=> 'required',
+            'name_doctor'=> 'required',
             'gender'=> 'required',
             'day_of_birth'=> 'required',
             'email'=> 'required|unique:doctors',
@@ -91,7 +91,7 @@ class DoctorController extends Controller
         
         
         $request->validate([
-            'name'=> 'required',
+            'name_doctor'=> 'required',
             'gender'=> 'required',
             'day_of_birth'=> 'required',
             'email'=> 'required',

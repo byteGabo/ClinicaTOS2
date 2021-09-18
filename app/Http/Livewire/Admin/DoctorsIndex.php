@@ -31,7 +31,7 @@ class DoctorsIndex extends Component
                        
         $doctors = Doctor::join('categories','categories.id', '=', 'doctors.category_id')
                                     ->select(['doctors.*','categories.name_category'])
-                                    ->where('name', 'LIKE', '%' .  $this->search . '%')  
+                                    ->where('name_doctor', 'LIKE', '%' .  $this->search . '%')  
                                     ->orderBy('id','DESC')
                                     ->paginate();
  

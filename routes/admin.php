@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\PatientController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
@@ -16,3 +17,5 @@ Route::resource('statuses', StatusController::class)->names('admin.statuses');
 Route::resource('appointments', AppointmentController::class)->names('admin.appointments');
 
 Route::resource('doctors', DoctorController::class)->names('admin.doctors');
+
+Route::resource('patients', PatientController::class)->names('admin.patients');

@@ -30,7 +30,7 @@
                     @foreach ($statuses as $status)
                         <tr>
                             <td>{{$status->id}}</td>
-                            <td>{{$status->name}}</td>
+                            <td>{{$status->name_status}}</td>
                             <td width="10px">
                                 <a class="btn btn-primary btn-sm" href="{{route('admin.statuses.edit',$status)}}">Editar</a>
                             </td>
