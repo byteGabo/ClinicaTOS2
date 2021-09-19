@@ -7,7 +7,23 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+@if (session('info'))
+        <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+        </div>   
+    @endif
+    <div class="card">
+        <div class="card-body">
+            {!! Form::model($patient, ['route'=>['admin.patients.update', $patient], 'method' => 'put']) !!}
+                
+            @include('admin.patients.partials.form')
+
+            {!! Form::submit('Modificar Paciente', ['class'=>'btn btn-primary']) !!}
+            
+            {!! Form::close() !!}
+ 
+        </div>
+    </div>
 @stop
 
 @section('css')

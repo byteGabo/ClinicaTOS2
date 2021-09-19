@@ -51,7 +51,7 @@ class PatientController extends Controller
         ]);
         $patient= Patient::create($request->all());
 
-        return redirect()->route('admin.patients.index',$patient);
+        return redirect()->route('admin.patients.index',$patient)->with('info','El paciente se creó con exito');
     }
 
     /**
@@ -60,7 +60,7 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($patient)
+    public function show(Patient $patient)
     {
         //
     }
@@ -71,9 +71,10 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($patient)
+    public function edit(Patient $patient)
     {
-        //
+        //se pasa los datos del id del paciente a la vista editar paciente 
+       return view('admin.patients.edit', compact('patient'));
     }
 
     /**
@@ -83,9 +84,27 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $patient)
+    public function update(Request $request, Patient $patient)
     {
-        //
+
+        //se validan todos los datos antes de modificarlos para no dejar ni una casilla vacia 
+        $request->validate([
+            'name_patient'=> 'required',
+            'dpi'=> 'required',
+            'gender'=> 'required',
+            'day_of_birth'=> 'required',
+            'email'=> 'required',
+            'address'=> 'required',
+            'phone'=> 'required',
+            'sick'=> 'required',
+            'medicaments'=> 'required',
+            'alergy'=> 'required',
+            'is_active'=> 'required'        
+        ]);
+
+        $patient -> update($request->all());
+
+        return redirect()->route('admin.patients.index', $patient)->with('info','El paciente se modificó con exito');
     }
 
     /**
@@ -94,8 +113,10 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($patient)
+    public function destroy(Patient $patient)
     {
-        //
+        //se elimina el paciente definitivamente y se redirecciona a la lista de pacientes 
+        $patient -> delete();
+        return redirect()->route('admin.patients.index')->with('info','El paciente se eliminó con exito');
     }
 }

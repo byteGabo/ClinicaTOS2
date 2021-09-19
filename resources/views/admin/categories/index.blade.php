@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'GoClinic')
+@section('title', 'Especialidades | GoClinic')
 
 @section('content_header')
     <h1>Listado de Especialidades</h1>
@@ -14,7 +14,7 @@
     @endif
     <div class="card">
         <div class="card-header">   
-            <a class="btn btn-secondary" href="{{route('admin.categories.create')}}">Agregar nueva especialidad</a>
+            <a class="btn btn-secondary float-right" href="{{route('admin.categories.create')}}">Agregar nueva especialidad</a>
         </div>
 
         <div class="card-body">

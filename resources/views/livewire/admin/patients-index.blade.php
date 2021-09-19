@@ -5,7 +5,7 @@
 
     @if ($patients->count())
     <div class="card-body">
-        <table class="table table-striped table-responsive">
+        <table class="table table-striped table-sm table-responsive">
             <thead>
                  <tr>
                      <th>ID</th>
@@ -16,9 +16,6 @@
                      <th>Email</th>
                      <th>Dirección</th>
                      <th>Telefono</th>
-                     <th>Enfermedades</th>
-                     <th>Medicamentos</th>
-                     <th>Alergias</th>
                      <th>Estado</th>
                      <th colspan="2"></th>
                  </tr>
@@ -33,10 +30,7 @@
                        <td>{{$patient->day_of_birth}}</td>
                        <td>{{$patient->email}}</td>
                        <td>{{$patient->address}}</td>
-                       <td>{{$patient->phone}}</td>
-                       <td>{{$patient->sick}}</td> 
-                       <td>{{$patient->medicaments}}</td>
-                       <td>{{$patient->alergy}}</td>   
+                       <td>{{$patient->phone}}</td>   
                        @if ($patient->is_active==1)
                        <td class="bg-success">Activo</td>
                        @else

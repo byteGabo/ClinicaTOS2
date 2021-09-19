@@ -5,7 +5,7 @@
 
     @if ($doctors->count())
     <div class="card-body">
-        <table class="table table-striped table-responsive">
+        <table class="table table-striped table-sm table-responsive">
             <thead>
                  <tr>
                      <th>ID</th>
@@ -35,7 +35,7 @@
                        @endif
                        <td>{{$doctor->name_category}} </td>
                    
-                    
+                  
                        <td width="10px">
                            <a class="btn btn-primary btn-sm" href="{{route('admin.doctors.edit', $doctor)}}">Editar</a>
                        </td>

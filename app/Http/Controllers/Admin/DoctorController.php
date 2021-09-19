@@ -88,8 +88,6 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        
-        
         $request->validate([
             'name_doctor'=> 'required',
             'gender'=> 'required',
@@ -104,7 +102,7 @@ class DoctorController extends Controller
        
         $doctor -> update($request->all());
 
-        return redirect()->route('admin.doctors.edit', $doctor)->with('info','El doctor se modificó con exito');
+        return redirect()->route('admin.doctors.index', $doctor)->with('info','El doctor se modificó con exito');
     }
 
     /**
@@ -116,6 +114,6 @@ class DoctorController extends Controller
     public function destroy(Doctor $doctor)
     {
         $doctor -> delete();
-        return redirect()->route('admin.doctors.index');
+        return redirect()->route('admin.doctors.index')->with('info','El doctor se eliminó con exito');
     }
 }

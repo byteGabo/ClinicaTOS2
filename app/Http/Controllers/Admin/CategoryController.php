@@ -43,7 +43,7 @@ class CategoryController extends Controller
 
         $category = Category::create($request->all());
 
-        return redirect()->route('admin.categories.edit', $category)->with('info','La especialidad se creó con exito');
+        return redirect()->route('admin.categories.index', $category)->with('info','La especialidad se creó con exito');
     }
 
     /**
@@ -83,7 +83,7 @@ class CategoryController extends Controller
 
         $category->update($request->all());
 
-        return redirect()->route('admin.categories.edit',$category)->with('info','La especialidad se actualizo con exito');
+        return redirect()->route('admin.categories.index',$category)->with('info','La especialidad se actualizo con exito');
     }
 
     /**
