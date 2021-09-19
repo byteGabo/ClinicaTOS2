@@ -74,7 +74,12 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        return view('admin.appointments.edit', compact('appointment'));
+        $doctors = Doctor::pluck('name_doctor','id');
+                            
+        $patients = Patient::pluck('name_patient','id');
+                                
+        $statuses = Status::pluck('name_status','id');
+        return view('admin.appointments.edit', compact('appointment','doctors','patients','statuses'));
     }
 
     /**
@@ -86,7 +91,10 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, Appointment $appointment)
     {
-        //
+        $appointment -> update($request->all());
+    
+
+        return redirect()->route('admin.appointments.index', $appointment)->with('info','La cita se modificó con exito');
     }
 
     /**
@@ -97,6 +105,8 @@ class AppointmentController extends Controller
      */
     public function destroy(Appointment $appointment)
     {
-        //
+        $appointment->delete();
+
+        return redirect()->route('admin.appointments.index')->with('info','La cita se borró con exito');
     }
 }

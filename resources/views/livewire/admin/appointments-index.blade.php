@@ -1,7 +1,19 @@
 <div class="card">
 
     <div class="card-header">
-        <input wire:model="search" class="form-control" placeholder="busqueda">
+        <h3>Busquedas:</h3>
+       <div class="row">
+           <div class="col">
+            <input wire:model="search" class="form-control" placeholder="busqueda por nombre">
+           </div>
+           <div class="col">
+            <input wire:model="search2" class="form-control" placeholder="busqueda por status">
+           </div>
+           <div class="col">
+            <input wire:model="search3" class="form-control" placeholder="busqueda por Doctor">
+           </div>
+       </div>
+        
     </div>
 
     @if ($appointments->count())
