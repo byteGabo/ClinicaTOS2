@@ -53,7 +53,7 @@ class DoctorController extends Controller
 
         $doctor = Doctor::create($request->all());
 
-        return redirect()->route('admin.doctors.edit', $doctor)->with('info','El doctor se creó con exito');
+        return redirect()->route('admin.doctors.index', $doctor)->with('info','El doctor se creó con exito');
     }
 
     /**
