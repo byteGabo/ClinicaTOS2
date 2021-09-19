@@ -15,10 +15,9 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->longText('note')->nullable();
             $table->date('date_at');
-            $table->time('time_at');
+            $table->string('time_at',20);
             $table->longText('symtoms');
             $table->longText('sick')->nullable();
             

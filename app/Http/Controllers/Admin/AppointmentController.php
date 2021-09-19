@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
+use App\Models\Doctor;
+use App\Models\Patient;
+use App\Models\Status;
+use NunoMaduro\Collision\Adapters\Phpunit\State;
 
 class AppointmentController extends Controller
 {
@@ -25,7 +29,13 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        return view('admin.appointments.create');
+        $doctors = Doctor::pluck('name_doctor','id');
+                            
+        $patients = Patient::pluck('name_patient','id');
+                                
+        $statuses = Status::pluck('name_status','id');
+        
+        return view('admin.appointments.create', compact('doctors','patients','statuses'));
     }
 
     /**
@@ -36,7 +46,13 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $appointment = Appointment::create($request->all());
+    
+        
+    /*     return $request; */
+        
+        return redirect()->route('admin.appointments.index', $appointment)->with('info','La cita se creó con exito');
     }
 
     /**

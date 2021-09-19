@@ -252,7 +252,7 @@ return [
             'icon'        => 'fas fa-fw fa-tachometer-alt',
             
         ],
-        ['header' => 'Administrador'],
+        ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Pacientes',
             'route'  => 'admin.patients.index',
@@ -318,7 +318,7 @@ return [
         ],
         ['header' => 'OPCIONES'],
         [
-            'text' => 'Lista de citas',
+            'text' => 'Citas',
             'route'  => 'admin.appointments.index',
             'icon' => 'fas fa-fw fa-calendar-check',
             

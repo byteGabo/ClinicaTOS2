@@ -101,6 +101,7 @@ class DoctorController extends Controller
 
        
         $doctor -> update($request->all());
+    
 
         return redirect()->route('admin.doctors.index', $doctor)->with('info','El doctor se modificó con exito');
     }

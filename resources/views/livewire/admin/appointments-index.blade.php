@@ -15,7 +15,6 @@
                     <th>Hora</th>
                     <th>Sintomas</th>
                     <th>Enfermedades</th>
-                    <th>Titulo</th>
                     <th>Doctor</th>
                     <th>Status</th>
                     <th>Cita creada por</th>
@@ -32,7 +31,6 @@
                     <td>{{$appointment->time_at}}</td>
                     <td>{{$appointment->symtoms}}</td>
                     <td>{{$appointment->sick}}</td>
-                    <td>{{$appointment->title}}</td>
                     <td>{{$appointment->name_doctor}} </td>
                     <td class="bg-success"><strong>{{$appointment->name_status}}</strong></td>
                     <td>{{$appointment->name}}</td>

@@ -15,6 +15,7 @@
     <div class="card">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.doctors.store']) !!}
+            {!! Form::hidden('user_id', auth()->user()->id)!!}
 
             @include('admin.doctors.partials.form')
             

@@ -1,12 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'GoClinic')
+@section('title', 'Citas')
 
 @section('content_header')
+    <a class="btn btn-success float-right" href="{{route('admin.appointments.create')}}"><strong>+</strong> Crear nueva cita</a>
     <h1>Listado de Citas</h1>
 @stop
 
 @section('content')
+    @if (session('info'))
+        <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+        </div>   
+    @endif
     @livewire('admin.appointments-index')
 @stop
 

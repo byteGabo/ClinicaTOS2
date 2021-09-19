@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
+    protected $guarded=['id','created_at','updated_at'];
+
      //relacion uno a muchos inversa con Usuarios
      public function user(){
         return $this->belongsTo(User::class);
