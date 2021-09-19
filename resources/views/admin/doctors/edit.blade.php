@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'GoClinic')
+@section('title', 'Editar Doctor')
 
 @section('content_header')
     <h1>Modificar Doctor</h1>

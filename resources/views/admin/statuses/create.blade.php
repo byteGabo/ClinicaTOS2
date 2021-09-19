@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Status | GoClinic')
+@section('title', 'Crear Status')
 
 @section('content_header')
     <h1>Crear nuevo status</h1>

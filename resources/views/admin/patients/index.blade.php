@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'GoClinic')
+@section('title', 'Pacientes')
 
 @section('content_header')
 <a class="btn btn-secondary float-right" href="{{route('admin.patients.create')}} ">Ingresar nuevo Paciente</a>

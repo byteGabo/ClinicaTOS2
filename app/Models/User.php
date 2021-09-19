@@ -63,4 +63,8 @@ class User extends Authenticatable
     public function appointment(){
         return $this->hasMany(Appointment::class);
     }
+
+    public function adminlte_image(){
+        
+    }
 }
