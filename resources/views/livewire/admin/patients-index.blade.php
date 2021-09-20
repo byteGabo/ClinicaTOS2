@@ -1,6 +1,13 @@
 <div class="card">
     <div class="card-header">
-        <input wire:model="search" class="form-control" placeholder="Ingrese el nombre de un paciente">
+        <div class="row">
+            <div class="col">
+                <input wire:model="search" class="form-control" placeholder="Ingrese el nombre de un paciente">
+            </div>
+            <div class="col">
+                <a class="btn btn-danger float-right" href="{{route('admin.patients.pdf')}} ">Crear PDF</a>
+            </div>
+        </div>
     </div>
 
     @if ($patients->count())

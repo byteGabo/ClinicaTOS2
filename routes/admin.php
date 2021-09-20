@@ -21,3 +21,6 @@ Route::resource('doctors', DoctorController::class)->names('admin.doctors');
 Route::get('doctor/pdf', [DoctorController::class,'crearPDF'])->name('admin.doctors.pdf');
 
 Route::resource('patients', PatientController::class)->names('admin.patients');
+
+Route::get('patient/pdf', [PatientController::class,'crearPDF'])->name('admin.patients.pdf');
+

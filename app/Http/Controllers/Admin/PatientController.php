@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use PDF;
 
 class PatientController extends Controller
 {
@@ -118,5 +119,15 @@ class PatientController extends Controller
         //se elimina el paciente definitivamente y se redirecciona a la lista de pacientes 
         $patient -> delete();
         return redirect()->route('admin.patients.index')->with('info','El paciente se eliminó con exito');
+    }
+
+    public function crearPDF(){
+        $patients = Patient::where('is_active',1)
+                             ->select('patients.*')
+                             ->orderBy('id','DESC')
+                             ->get();
+
+        $pdf = PDF::loadView('admin.patients.pdf', compact('patients'));
+        return $pdf->download('patients-list.pdf');
     }
 }
