@@ -18,4 +18,6 @@ Route::resource('appointments', AppointmentController::class)->names('admin.appo
 
 Route::resource('doctors', DoctorController::class)->names('admin.doctors');
 
+Route::get('doctor/pdf', [DoctorController::class,'crearPDF'])->name('admin.doctors.pdf');
+
 Route::resource('patients', PatientController::class)->names('admin.patients');

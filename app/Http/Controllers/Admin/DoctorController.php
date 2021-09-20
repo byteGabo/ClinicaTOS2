@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Category;
+use PDF;
 
 class DoctorController extends Controller
 {
@@ -116,5 +117,21 @@ class DoctorController extends Controller
     {
         $doctor -> delete();
         return redirect()->route('admin.doctors.index')->with('info','El doctor se eliminó con exito');
+    }
+
+    public function crearPDF(){
+
+        $doctors = Doctor::join('categories','categories.id', '=', 'doctors.category_id')
+                                    ->where('is_active',1)
+                                    ->select(['doctors.*','categories.name_category'])
+                                    ->orderBy('id','DESC')
+                                    ->get();
+                                    
+
+       /*  $doctors= Doctor::where('is_active',1)
+                        ->get(); */
+
+        $pdf = PDF::loadView('admin.doctors.pdf',compact('doctors'));
+        return $pdf->download('doctors-list.pdf');
     }
 }
