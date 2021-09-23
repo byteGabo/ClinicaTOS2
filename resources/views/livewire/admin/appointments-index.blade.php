@@ -3,6 +3,9 @@
     <div class="card-header">
         <h3>Busquedas:</h3>
        <div class="row">
+        <div class="col">
+            <input wire:model="search4" class="form-control" placeholder="busqueda por DPI">
+           </div>
            <div class="col">
             <input wire:model="search" class="form-control" placeholder="busqueda por nombre">
            </div>
@@ -18,7 +21,7 @@
 
     @if ($appointments->count())
     <div class="card-body">
-        <table class="table table-striped table-responsive">
+        <table class="table table-striped table-sm table-responsive">
             <thead>
                 <tr>
                     <th>ID</th>

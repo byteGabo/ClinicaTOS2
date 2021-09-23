@@ -12,7 +12,7 @@
 
     @if ($doctors->count())
     <div class="card-body">
-        <table class="table table-striped table-sm table-responsive">
+        <table class="table table-striped table-responsive">
             <thead>
                  <tr>
                      <th>ID</th>

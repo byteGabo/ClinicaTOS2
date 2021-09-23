@@ -277,45 +277,6 @@ return [
             'icon' => 'far fa-fw fa-bookmark',
             'active'=> ['admin/statuses*']
         ],
-       
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
         ['header' => 'OPCIONES'],
         [
             'text' => 'Citas',
@@ -327,6 +288,12 @@ return [
             'text' => 'Crear nueva cita',
             'route'  => 'admin.appointments.create',
             'icon' => 'fas fa-fw fa-plus',
+            
+        ],
+        [
+            'text' => 'Historial clinico',
+            'route'  => 'admin.appointments.create',
+            'icon' => 'fas fa-fw fa-history',
             
         ],
     

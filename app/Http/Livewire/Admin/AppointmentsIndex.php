@@ -14,6 +14,7 @@ class AppointmentsIndex extends Component
     public $search;
     public $search2;
     public $search3;
+    public $search4;
     public function updatingSearch(){
         $this->resetPage();
     }
@@ -25,7 +26,8 @@ class AppointmentsIndex extends Component
                                     ->join('patients','patients.id','=','appointments.patient_id')
                                     ->join('statuses','statuses.id','=','appointments.status_id')
                                     ->join('users','users.id','=','appointments.user_id')
-                                    ->select(['appointments.*','doctors.name_doctor','patients.name_patient','statuses.name_status','users.name'])
+                                    ->select(['appointments.*','doctors.name_doctor','patients.name_patient', 'patients.dpi','statuses.name_status','users.name'])
+                                    ->where('patients.dpi','LIKE', '%' . $this->search4 . '%')
                                     ->where('patients.name_patient','LIKE', '%' . $this->search . '%')
                                     ->where('statuses.name_status','LIKE', '%' . $this->search2 . '%')
                                     ->where('doctors.name_doctor','LIKE', '%' . $this->search3 . '%')
