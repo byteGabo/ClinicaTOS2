@@ -2,7 +2,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col">
-                <input wire:model="search" class="form-control" placeholder="Ingrese el nombre de un paciente">
+                <input wire:model="search" class="form-control" placeholder="Ingrese el DPI de un paciente">
             </div>
             <div class="col">
                 <a class="btn btn-danger float-right" href="{{route('admin.patients.pdf')}} ">Crear PDF</a>
@@ -15,7 +15,7 @@
         <table class="table table-striped table-sm table-responsive">
             <thead>
                  <tr>
-                     <th>ID</th>
+                     {{-- <th>ID</th> --}}
                      <th>Nombre</th>
                      <th>DPI</th>
                      <th>Genero</th>
@@ -30,7 +30,7 @@
             <tbody>
                 @foreach ($patients as $patient)
                    <tr>
-                       <td>{{$patient->id}}</td>
+                      {{--  <td>{{$patient->id}}</td> --}}
                        <td>{{$patient->name_patient}}</td>
                        <td>{{$patient->dpi}}</td>
                        <td>{{$patient->gender}}</td>

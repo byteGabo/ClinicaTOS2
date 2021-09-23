@@ -252,6 +252,27 @@ return [
             'icon'        => 'fas fa-fw fa-tachometer-alt',
             
         ],
+        [
+            'text' => 'Crear nueva cita',
+            'route'  => 'admin.appointments.create',
+            'icon' => 'fas fa-fw fa-plus',
+            
+        ],
+        ['header' => 'OPCIONES'],
+        [
+            'text' => 'Citas',
+            'route'  => 'admin.appointments.index',
+            'icon' => 'fas fa-fw fa-calendar-check',
+            
+        ],
+      
+        [
+            'text' => 'Historial clinico',
+            'route'  => 'admin.appointments.create',
+            'icon' => 'fas fa-fw fa-history',
+            
+        ],
+        
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Pacientes',
@@ -277,26 +298,7 @@ return [
             'icon' => 'far fa-fw fa-bookmark',
             'active'=> ['admin/statuses*']
         ],
-        ['header' => 'OPCIONES'],
-        [
-            'text' => 'Citas',
-            'route'  => 'admin.appointments.index',
-            'icon' => 'fas fa-fw fa-calendar-check',
-            
-        ],
-        [
-            'text' => 'Crear nueva cita',
-            'route'  => 'admin.appointments.create',
-            'icon' => 'fas fa-fw fa-plus',
-            
-        ],
-        [
-            'text' => 'Historial clinico',
-            'route'  => 'admin.appointments.create',
-            'icon' => 'fas fa-fw fa-history',
-            
-        ],
-    
+        
     ],
 
     /*

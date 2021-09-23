@@ -19,7 +19,7 @@ class PatientsIndex extends Component
     public function render()
     {
         $patients = Patient::select('patients.*')
-                            ->where('name_patient', 'LIKE', '%' .  $this->search . '%')
+                            ->where('dpi', 'LIKE', '%' .  $this->search . '%')
                             ->latest('id')
                             ->paginate();
 
