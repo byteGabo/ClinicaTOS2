@@ -249,7 +249,7 @@ return [
         [
             'text'        => 'Inicio',
             'route'         => 'admin.home',
-            'icon'        => 'fas fa-fw fa-tachometer-alt',
+            'icon'        => 'fas fa-fw fa-home',
             
         ],
         [
@@ -295,8 +295,14 @@ return [
         [
             'text' => 'Listado Status de citas',
             'route'  => 'admin.statuses.index',
-            'icon' => 'far fa-fw fa-bookmark',
+            'icon' => 'fas fa-fw fa-bookmark',
             'active'=> ['admin/statuses*']
+        ],
+        [
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon' => 'fas fa-fw fa-user',
+            'active'=> ['admin/users*']
         ],
         
     ],
