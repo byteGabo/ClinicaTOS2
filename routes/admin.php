@@ -8,10 +8,13 @@ use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RoleController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
 Route::resource('users', UserController::class)->only('index','edit','update')->names('admin.users');
+
+Route::resource('roles', RoleController::class)->names('admin.roles');
 
 
 Route::resource('categories', CategoryController::class)->names('admin.categories');

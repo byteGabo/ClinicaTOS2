@@ -304,6 +304,13 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'active'=> ['admin/users*']
         ],
+
+        [
+            'text' => 'Roles',
+            'route'  => 'admin.roles.index',
+            'icon' => 'fas fa-fw fa-users-cog',
+            'active'=> ['admin/roles*']
+        ],
         
     ],
 
