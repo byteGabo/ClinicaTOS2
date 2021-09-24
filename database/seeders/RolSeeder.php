@@ -48,5 +48,10 @@ class RolSeeder extends Seeder
        Permission::create(['name'=>'admin.appointments.create','description'=>'Crear una nueva cita'])->syncRoles([$role1,$role2,$role3]);
        Permission::create(['name'=>'admin.appointments.edit','description'=>'Modificar una cita'])->syncRoles([$role1,$role2,$role3]);
        Permission::create(['name'=>'admin.appointments.destroy','description'=>'Eliminar una cita'])->syncRoles([$role1,$role2,$role3]);
+
+       Permission::create(['name'=>'admin.roles.index','description'=>'Ver el listado de roles'])->assignRole($role1);
+       Permission::create(['name'=>'admin.roles.create','description'=>'Crear un nueva rol'])->assignRole($role1);
+       Permission::create(['name'=>'admin.roles.edit','description'=>'Modificar un rol'])->assignRole($role1);
+       Permission::create(['name'=>'admin.roles.destroy','description'=>'Eliminar un rol'])->assignRole($role1);
     }
 }
