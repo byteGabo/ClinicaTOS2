@@ -250,12 +250,14 @@ return [
             'text'        => 'Inicio',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-fw fa-home',
+            'can' =>'admin.home'
             
         ],
         [
             'text' => 'Crear nueva cita',
             'route'  => 'admin.appointments.create',
             'icon' => 'fas fa-fw fa-plus',
+            'can' =>'admin.appointments.create'
             
         ],
         ['header' => 'OPCIONES'],
@@ -263,13 +265,15 @@ return [
             'text' => 'Citas',
             'route'  => 'admin.appointments.index',
             'icon' => 'fas fa-fw fa-calendar-check',
+            'can' =>'admin.appointments.index'
             
         ],
       
         [
             'text' => 'Historial clinico',
-            'route'  => 'admin.appointments.create',
+            'route'  => 'admin.appointments.index',
             'icon' => 'fas fa-fw fa-history',
+            'can' =>'admin.appointments.index'
             
         ],
         
@@ -278,38 +282,45 @@ return [
             'text' => 'Pacientes',
             'route'  => 'admin.patients.index',
             'icon' => 'fas fa-fw fa-user-injured',
-            'active'=> ['admin/patients*']
+            'active'=> ['admin/patients*'],
+            'can' =>'admin.patients.index'
         ],
         [
             'text' => 'Doctores',
             'route'  => 'admin.doctors.index',
             'icon' => 'fas fa-fw fa-user-md',
-            'active'=> ['admin/doctors*']
+            'active'=> ['admin/doctors*'],
+            'can' =>'admin.doctors.index'
         ], 
         [
             'text' => 'Especialidades',
             'route'  => 'admin.categories.index',
             'icon' => 'fab fa-fw fa-buffer',
-            'active'=> ['admin/categories*']
+            'active'=> ['admin/categories*'],
+            'can' =>'admin.categories.index'
         ],
         [
             'text' => 'Listado Status de citas',
             'route'  => 'admin.statuses.index',
             'icon' => 'fas fa-fw fa-bookmark',
-            'active'=> ['admin/statuses*']
+            'active'=> ['admin/statuses*'],
+            'can' =>'admin.statuses.index'
         ],
         [
             'text' => 'Usuarios',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-user',
-            'active'=> ['admin/users*']
+            'active'=> ['adm,in/users*'],
+            'can' =>'admin.users.index'
         ],
 
         [
             'text' => 'Roles',
             'route'  => 'admin.roles.index',
             'icon' => 'fas fa-fw fa-users-cog',
-            'active'=> ['admin/roles*']
+            'active'=> ['admin/roles*'],
+            'can' =>'admin.users.index'
+            
         ],
         
     ],

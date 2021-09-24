@@ -34,7 +34,7 @@ class RolSeeder extends Seeder
        Permission::create(['name'=>'admin.statuses.edit','description'=>'Modificar un status'])->assignRole($role1);
        Permission::create(['name'=>'admin.statuses.destroy','description'=>'Eliminar un status'])->assignRole($role1);
 
-       Permission::create(['name'=>'admin.doctors.index','description'=>'Ver el listado de doctores'])->assignRole($role1);
+       Permission::create(['name'=>'admin.doctors.index','description'=>'Ver el listado de doctores'])->syncRoles([$role1,$role2,$role3]);
        Permission::create(['name'=>'admin.doctors.create','description'=>'Crear un nuevo doctor'])->assignRole($role1);
        Permission::create(['name'=>'admin.doctors.edit','description'=>'Modificar un doctor'])->assignRole($role1);
        Permission::create(['name'=>'admin.doctors.destroy','description'=>'Eliminar un doctor'])->assignRole($role1);
@@ -42,7 +42,7 @@ class RolSeeder extends Seeder
        Permission::create(['name'=>'admin.patients.index','description'=>'Ver el listado de pacientes'])->syncRoles([$role1,$role2,$role3]);
        Permission::create(['name'=>'admin.patients.create','description'=>'Crear un nuevo paciente'])->syncRoles([$role1,$role2,$role3]);
        Permission::create(['name'=>'admin.patients.edit','description'=>'Modificar un paciente'])->syncRoles([$role1,$role2,$role3]);
-       Permission::create(['name'=>'admin.patients.destroy','description'=>'Eliminar un paciente'])->syncRoles([$role1,$role2,$role3]);
+       Permission::create(['name'=>'admin.patients.destroy','description'=>'Eliminar un paciente'])->assignRole($role1);
 
        Permission::create(['name'=>'admin.appointments.index','description'=>'Ver el listado de citas'])->syncRoles([$role1,$role2,$role3]);
        Permission::create(['name'=>'admin.appointments.create','description'=>'Crear una nueva cita'])->syncRoles([$role1,$role2,$role3]);

@@ -4,7 +4,10 @@
 
 @section('content_header')
 
+    @can('admin.doctors.create')
     <a class="btn btn-secondary float-right" href="{{route('admin.doctors.create')}} ">Ingresar nuevo Doctor</a>
+    @endcan
+    
     <h1>Listado de Doctores</h1>
 @stop
 

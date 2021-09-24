@@ -44,14 +44,18 @@
                    
                   
                        <td width="10px">
-                           <a class="btn btn-primary btn-sm" href="{{route('admin.doctors.edit', $doctor)}}">Editar</a>
+                           @can('admin.doctors.edit')
+                           <a class="btn btn-primary btn-sm" href="{{route('admin.doctors.edit', $doctor)}}">Editar</a>  
+                           @endcan
                        </td>
                        <td width="10px">
-                           <form action="{{route('admin.doctors.destroy', $doctor)}}" method="POST">
-                          @csrf
-                          @method('DELETE')
-                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                         </form>
+                         @can('admin.doctors.destroy')
+                         <form action="{{route('admin.doctors.destroy', $doctor)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                               <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                           </form> 
+                         @endcan
                        </td>
                    </tr>
                     

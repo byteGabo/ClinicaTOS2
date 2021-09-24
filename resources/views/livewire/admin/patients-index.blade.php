@@ -47,11 +47,13 @@
                            <a class="btn btn-primary btn-sm" href="{{route('admin.patients.edit', $patient)}}">Editar</a>
                        </td>
                        <td width="10px">
-                           <form action="{{route('admin.patients.destroy', $patient)}}" method="POST">
-                          @csrf
-                          @method('DELETE')
-                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                         </form>
+                         @can('admin.patients.destroy')
+                         <form action="{{route('admin.patients.destroy', $patient)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                               <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                           </form>
+                         @endcan
                        </td>
                    </tr>
                     
