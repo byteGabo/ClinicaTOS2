@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class StatusController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.statuses.index')->only('index');
+        $this->middleware('can:admin.statuses.create')->only('create','store');
+        $this->middleware('can:admin.statuses.edit')->only('edit','update');
+        $this->middleware('can:admin.statuses.destroy')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

@@ -10,6 +10,13 @@ use PDF;
 
 class DoctorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.doctors.index')->only('index');
+        $this->middleware('can:admin.doctors.create')->only('create','store');
+        $this->middleware('can:admin.doctors.edit')->only('edit','update');
+        $this->middleware('can:admin.doctors.destroy')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

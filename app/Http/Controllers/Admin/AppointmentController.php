@@ -12,6 +12,13 @@ use NunoMaduro\Collision\Adapters\Phpunit\State;
 
 class AppointmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:admin.appointments.index')->only('index');
+        $this->middleware('can:admin.appointments.create')->only('create','store');
+        $this->middleware('can:admin.appointments.edit')->only('edit','update');
+        $this->middleware('can:admin.appointments.destroy')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *
