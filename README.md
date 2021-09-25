@@ -13,22 +13,22 @@ Se creo una pagina index donde se encuentra el directorio de los especialistas m
 
 ## Componentes del Sistema
 
--Vistas de login y registro con laravel Jetstream
--Creacion de plantilla administrativa con AdminTLE
--Crud para roles de usuarios 
--Asignación de roles de usuarios
--Crud para Doctores
--Crud para Pacientes
--Crud de citas
--Crud de especialidades
--Crud de status de citas
--Base de datos MYSQL
--Exportacion PDF 
--Busquedas avanzadas en tiempo real 
--Perfil de usurio
--Cambio de contrañesa o correo
--Status de citas 
--Server gratuito infinityFree
+- Vistas de login y registro con laravel Jetstream
+- Creacion de plantilla administrativa con AdminTLE
+- Crud para roles de usuarios 
+- Asignación de roles de usuarios
+- Crud para Doctores
+- Crud para Pacientes
+- Crud de citas
+- Crud de especialidades
+- Crud de status de citas
+- Base de datos MYSQL
+- Exportacion PDF 
+- Busquedas avanzadas en tiempo real 
+- Perfil de usurio
+- Cambio de contrañesa o correo
+- Status de citas 
+- Server gratuito infinityFree
 
 ## Soporte
 
