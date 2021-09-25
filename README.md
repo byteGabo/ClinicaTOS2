@@ -4,6 +4,11 @@
 <h2>Proyecto Clinica WEB teoria de sistemas 2</h2>
 </p>
 
+<p align="center">
+<h2>Gabriel Chaves No 130102028</h2>
+<h2>Ing.Moises Reyes</h2>
+</p>
+
 ## Instrucciones
 
 - [Ingresar al enlace](http://go-clinic-test.epizy.com/)
