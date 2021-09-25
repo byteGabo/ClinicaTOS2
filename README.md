@@ -41,7 +41,7 @@ Invitame un cafe [PayPal](https://paypal.me/gabitoxp?locale.x=es_XC)
 
 ## Fuentes
 
-Gracias a Victor Arana por la ayuda y tambien se utilizó la guia [Laravel documentation](https://laravel.com/docs/8.x).
+Se utilizó la guia [Laravel documentation](https://laravel.com/docs/8.x).
 
 ## License
 
