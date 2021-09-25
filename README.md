@@ -5,8 +5,8 @@
 </p>
 
 <p align="center">
-<h2>Gabriel Chaves No 130102028</h2>
-<h2>Ing.Moises Reyes</h2>
+<h3>Gabriel Chaves No 130102028</h3>
+<h3>Ing.Moises Reyes</h3>
 </p>
 
 ## Instrucciones
