@@ -18,10 +18,16 @@ Se creo una pagina index donde se encuentra el directorio de los especialistas m
 
 ## Componentes del Sistema
 
+- Arquitectura Model Vista Controlador
+- Consulta de datos Eloquent ORM 
+- Factories en laravel para llenado de base de datos con datos de prueba 
 - Vistas de login y registro con laravel Jetstream
 - Creacion de plantilla administrativa con AdminTLE
 - Crud para roles de usuarios 
 - Asignación de roles de usuarios
+- Proteccion de rutas 
+- Componentes Livewire
+- Validaciónes de formularios
 - Crud para Doctores
 - Crud para Pacientes
 - Crud de citas
